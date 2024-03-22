@@ -3,13 +3,15 @@ import { productActions } from "../slices/productSlice";
 /*===========================================*/
 /*===========================================*/
 /*===========================================*/
+// http://localhost:5000/products
+
 
 // Fetch All Products
 export function fetchProducts() {
   return async (dispatch) => {
     try {
       dispatch(productActions.setLoading());
-      const response = await fetch("http://localhost:5000/products");
+      const response = await fetch("https://project-data-qv2a.onrender.com/products");
       const data = await response.json();
       dispatch(productActions.getProducts(data));
     } catch (error) {
@@ -26,7 +28,7 @@ export function fetchSingleProduct(productId) {
   return async (dispatch) => {
     try {
       dispatch(productActions.setLoading());
-      const response = await fetch(`http://localhost:5000/products/${productId}`);
+      const response = await fetch(`https://project-data-qv2a.onrender.com/products/${productId}`);
       const data = await response.json();
       dispatch(productActions.getProduct(data));
     } catch (error) {

@@ -22,7 +22,8 @@ const CartModalSingle = ({ data, onDelete }) => {
                     <AiOutlineCloseCircle />
                 </span>
                 <Link to={`/products/${id}`} onClick={() => dispatch(setHideModal())}>
-                    <img src={process.env.PUBLIC_URL + itemImg} alt={itemName} />
+                    {/* <img src={process.env.PUBLIC_URL + itemImg} alt={itemName} /> */}
+                    <img src={itemImg} alt={itemName} />
                 </Link>
             </div>
             <div className="right">

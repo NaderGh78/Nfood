@@ -50,8 +50,6 @@ const Cart = () => {
                     <div className="myContainer">
                         <div className="cart-content">
                             <div className="my-table">
-
-
                                 <table className="table table-hover">
                                     <thead>
                                         <tr>
@@ -73,17 +71,15 @@ const Cart = () => {
                                                                 <AiOutlineCloseCircle />
                                                             </span>
                                                             <Link to={`/products/${el.id}`}>
-                                                                <img src={process.env.PUBLIC_URL + el.itemImg} alt={el.itemName} />
+                                                                {/* <img src={process.env.PUBLIC_URL + el.itemImg} alt={el.itemName} /> */}
+                                                                <img src={el.itemImg} alt={el.itemName} />
                                                             </Link>
                                                             <Link to={`/products/${el.id}`}>
                                                                 <h5>{el.itemName}</h5>
                                                             </Link>
                                                         </div>
                                                     </td>
-
-
                                                     <td>
-                                                        {/* ${el.itemPrice} */}
                                                         {el.sale
                                                             ?
                                                             <>
@@ -95,20 +91,6 @@ const Cart = () => {
                                                                 <span>${el.itemPrice}</span>
                                                             </>}
                                                     </td>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
                                                     <td>
                                                         <div className="input-box">
                                                             <span>{el.itemQty}</span>
@@ -131,12 +113,7 @@ const Cart = () => {
                                         }
                                     </tbody>
                                 </table>
-
                             </div>
-
-
-
-
                             <div className="total-cart">
                                 <h5>CART TOTALS</h5>
                                 <ul>

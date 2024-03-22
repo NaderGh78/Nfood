@@ -15,7 +15,8 @@ const StickyAddCart = ({ product, addToCart, isVisible }) => {
                 <div className="sticky-add-cart-content">
                     <div className="left">
                         <div className="image-box">
-                            <img src={process.env.PUBLIC_URL + itemImg} alt={itemName} />
+                            {/* <img src={process.env.PUBLIC_URL + itemImg} alt={itemName} /> */}
+                            <img src={itemImg} alt={itemName} />
                         </div>
                         <div>
                             You're viewing: <span>{itemName}</span>

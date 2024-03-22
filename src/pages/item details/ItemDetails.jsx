@@ -113,7 +113,7 @@ const ItemDetails = () => {
                         <div className="left">
                             <div>
                                 {product?.sale ? <span>Sale!</span> : ""}
-                                <img src={process.env.PUBLIC_URL + product?.itemBigImg} alt={product?.itemName} />
+                                <img src={product?.itemBigImg} alt={product?.itemName} />
                             </div>
                         </div>
                         {/* end left */}

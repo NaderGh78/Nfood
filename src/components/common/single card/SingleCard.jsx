@@ -54,7 +54,7 @@ const SingleCard = ({ product }) => {
         <div className="my-card">
             <div className="card">
                 {sale ? <span className="new-price">Sale!</span> : ""}
-                <img src={process.env.PUBLIC_URL + itemImg} alt={itemName} />
+                <img src={itemImg} alt={itemName} />
                 <div className="card-body">
                     <h5 className="card-title text-capitalize" style={{ userSelect: "text", color: "var(--dark)" }}>
                         <Link to={`/products/${id}`}>{itemName}</Link>

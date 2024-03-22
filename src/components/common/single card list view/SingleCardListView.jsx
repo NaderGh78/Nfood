@@ -51,7 +51,8 @@ const SingleCardListView = ({ product }) => {
         <div className="single-card-list-view">
             {sale ? <span className="new-price">Sale!</span> : ""}
             <div className="left">
-                <img src={process.env.PUBLIC_URL + itemImg} alt={itemName} />
+                {/* <img src={process.env.PUBLIC_URL + itemImg} alt={itemName} /> */}
+                <img src={itemImg} alt={itemName} />
             </div>
             <div className="right">
                 <h5 className="card-title text-capitalize mb-2" style={{ userSelect: "text", color: "var(--dark)" }}>
