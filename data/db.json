@@ -1,0 +1,172 @@
+{
+    "products": [
+        {
+            "id": 1,
+            "itemImg": "/assets/images/pizza/Apricot-Chicken.png",
+            "itemBigImg": "/assets/images/pizza/Apricot-Chicken2.png",
+            "itemName": "apricot chicken",
+            "itemDesc": "Mouth watering pepperoni, cabanossi, mushroom, capsicum, black olives and stretchy mozzarella, seasoned with garlic and oregano.",
+            "itemPrice": 18.30,
+            "itemCat": "pizza",
+            "sale": false,
+            "itemNewprice": 13.2,
+            "itemQty": 1
+        },
+        {
+            "id": 2,
+            "itemImg": "/assets/images/big.png",
+            "itemBigImg": "/assets/images/big.png",
+            "itemName": "salad 1",
+            "itemDesc": "salad 1 desc",
+            "itemPrice": 14.2,
+            "itemCat": "salad",
+            "sale": true,
+            "itemNewprice": 13.2,
+            "itemQty": 1
+        },
+        {
+            "id": 3,
+            "itemImg": "/assets/images/pizza/Chicken-Hawaii.png",
+            "itemBigImg": "/assets/images/pizza/Chicken-Hawaii2.png",
+            "itemName": "Chicken Hawaii",
+            "itemDesc": "Extra-virgin olive oil, mozzarella cheese, thinly-sliced steak meat, garlic, green peppers, mushrooms and tomatoes",
+            "itemPrice": 14.49,
+            "itemCat": "pizza",
+            "sale": false,
+            "itemNewprice": 13.2,
+            "itemQty": 1
+        },
+        {
+            "id": 4,
+            "itemImg": "/assets/images/burger/Cheese-Butter.png",
+            "itemBigImg": "/assets/images/burger/Cheese-Butter2.png",
+            "itemName": "Cheese Butter",
+            "itemDesc": "A mighty meaty double helping of all the reasons you love our burger.",
+            "itemPrice": 15.76,
+            "itemCat": "burger",
+            "sale": false,
+            "itemNewprice": 13.2,
+            "itemQty": 1
+        },
+        {
+            "id": 5,
+            "itemImg": "/assets/images/drinks/Tropicana-Juice.png",
+            "itemBigImg": "/assets/images/drinks/Tropicana-Juice2.png",
+            "itemName": "Tropicana Juice",
+            "itemDesc": "View great tasting Tropicana Orange Juice and Juice Drink Products. Featuring Tropicana Orange Juice",
+            "itemPrice": 10.11,
+            "itemCat": "drinks",
+            "sale": true,
+            "itemNewprice": 8.2,
+            "itemQty": 1
+        },
+        {
+            "id": 6,
+            "itemImg": "/assets/images/desserts/Black-Coffee.png",
+            "itemBigImg": "/assets/images/desserts/Black-Coffee2.png",
+            "itemName": "Black Coffee",
+            "itemDesc": "Browse unique Coca-Cola products, clothing, & accessories, or customize Coke bottles and gifts",
+            "itemPrice": 11.76,
+            "itemCat": "desserts",
+            "sale": false,
+            "itemNewprice": 13.2,
+            "itemQty": 1
+        },
+        {
+            "id": 7,
+            "itemImg": "/assets/images/big.png",
+            "itemBigImg": "/assets/images/big.png",
+            "itemName": "salad 2",
+            "itemDesc": "salad 2 desc",
+            "itemPrice": 5.22,
+            "itemCat": "salad",
+            "sale": false,
+            "itemNewprice": 13.2,
+            "itemQty": 1
+        },
+        {
+            "id": 8,
+            "itemImg": "/assets/images/drinks/Water-Bottle.png",
+            "itemBigImg": "/assets/images/drinks/Water-Bottle2.png",
+            "itemName": "Water Bottle",
+            "itemDesc": "Investing in a reusable water bottle that you can refill throughout the day. Carrying one around with you will make you more likely to drink up.",
+            "itemPrice": 10.18,
+            "itemCat": "drinks",
+            "sale": false,
+            "itemNewprice": 13.2,
+            "itemQty": 1
+        },
+        {
+            "id": 9,
+            "itemImg": "/assets/images/desserts/Blueberry.png",
+            "itemBigImg": "/assets/images/desserts/Blueberry2.png",
+            "itemName": "Blueberry Shake",
+            "itemDesc": "Iced coffee is a type of coffee beverage served chilled, brewed variously with the fundamental division",
+            "itemPrice": 10.68,
+            "itemCat": "desserts",
+            "sale": true,
+            "itemNewprice": 7.5,
+            "itemQty": 1
+        },
+        {
+            "id": 10,
+            "itemImg": "/assets/images/burger/Chicken-Burger.png",
+            "itemBigImg": "/assets/images/burger/Chicken-Burger2.png",
+            "itemName": "Chicken Burger",
+            "itemDesc": "A mighty meaty double helping of all the reasons you love our burger.",
+            "itemPrice": 16.75,
+            "itemCat": "burger",
+            "sale": false,
+            "itemNewprice": 13.2,
+            "itemQty": 1
+        },
+        {
+            "id": 11,
+            "itemImg": "/assets/images/drinks/Trio-Cafe.png",
+            "itemBigImg": "/assets/images/drinks/Trio-Cafe2.png",
+            "itemName": "trio Cafe",
+            "itemDesc": "Trio Cafe is Family owned establishment located in Boston Waterfront next to World Trade Center.",
+            "itemPrice": 12.18,
+            "itemCat": "drinks",
+            "sale": false,
+            "itemNewprice": 13.2,
+            "itemQty": 1
+        },
+        {
+            "id": 12,
+            "itemImg": "/assets/images/big.png",
+            "itemBigImg": "/assets/images/big.png",
+            "itemName": "salad 3",
+            "itemDesc": "salad 3 desc",
+            "itemPrice": 7.7,
+            "itemCat": "salad",
+            "sale": true,
+            "itemNewprice": 4.2,
+            "itemQty": 1
+        },
+        {
+            "id": 13,
+            "itemImg": "/assets/images/burger/Double-Beef.png",
+            "itemBigImg": "/assets/images/burger/Double-Beef2.png",
+            "itemName": "Double Beef Burger",
+            "itemDesc": "A mighty meaty double helping of all the reasons you love our burger.",
+            "itemPrice": 13.17,
+            "itemCat": "burger",
+            "sale": false,
+            "itemNewprice": 13.2,
+            "itemQty": 1
+        },
+        {
+            "id": 14,
+            "itemImg": "/assets/images/pizza/Grand-Italiano.png",
+            "itemBigImg": "/assets/images/pizza/Grand-Italiano2.png",
+            "itemName": "Grand Italiano",
+            "itemDesc": "Quisque pretium turpis non tempus cursus. Nulla consequat, mi nec pellentesque imperdiet, mi quam congue magna, tristique commodo.",
+            "itemPrice": 7.00,
+            "itemCat": "pizza",
+            "sale": false,
+            "itemNewprice": 13.2,
+            "itemQty": 1
+        }
+    ]
+}

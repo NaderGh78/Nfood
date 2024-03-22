@@ -1,0 +1,229 @@
+.menu-filter {
+    margin-top: 50px;
+}
+
+.menu-filter .top {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.menu-filter .top ul {
+    list-style: none;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    padding: 0;
+    margin: 0;
+}
+
+.menu-filter .top ul li {
+    font-size: 18px;
+    text-transform: capitalize;
+    color: var(--dark);
+    cursor: pointer;
+}
+
+.menu-filter .top ul li.active {
+    text-decoration: underline;
+    color: var(--pistach);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.menu-filter .top ul+div {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.menu-filter .top ul+div .icons span {
+    display: inline-block;
+    width: 35px;
+    height: 35px;
+    text-align: center;
+    line-height: 31px;
+    background-color: #999;
+    color: #fff;
+    transition: all .2s;
+    cursor: pointer;
+}
+
+.menu-filter .top ul+div .icons span:first-of-type {
+    margin-right: 10px;
+}
+
+.menu-filter .top ul+div .icons span:hover,
+.menu-filter .top ul+div .icons span.active {
+    background-color: var(--pistach);
+}
+
+
+.menu-filter .top .select-box {
+    display: inline-block;
+    position: relative;
+    width: 200px;
+}
+
+.menu-filter .top .select-box:before {
+    content: "Sort By : ";
+    position: absolute;
+    top: 9px;
+    left: 10px;
+    font-size: 14px;
+    color: #fff;
+    z-index: 3;
+}
+
+.menu-filter .top .select-box select {
+    -webkit-appearance: none;
+    appearance: none;
+    position: relative;
+    width: 100%;
+    padding: 8px 0 8px 80px;
+    font-size: 14px;
+    background-color: #000;
+    color: #fff;
+    border: 1px solid #d3d3d3;
+    border-radius: 4px;
+    outline: none;
+    z-index: 2;
+    cursor: pointer;
+}
+
+.menu-filter .top .select-box select:focus {
+    box-shadow: none;
+}
+
+/* start all filters items style */
+.menu-filter .all-filters-items {
+    position: relative;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+    width: 100%;
+    min-height: 400px;
+    margin-top: 20px;
+}
+
+.menu-filter .all-filters-items .spinner-holder {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.menu-filter .all-filters-items .my-card {
+    width: calc((100% - 90px)/4);
+}
+
+.menu-filter .all-filters-items .my-card .card {
+    width: 100%;
+}
+
+/* end all filters items style */
+
+/* start change to list view style */
+
+.change-to-list-view .single-card-list-view {
+    width: calc((100% - 30px) / 2) !important;
+}
+
+/* end change to list view style */
+
+
+/*====================================*/
+/*===========Responsive===============*/
+/*====================================*/
+
+@media only screen and (max-width:1090px) {
+
+    .change-to-list-view .single-card-list-view {
+        width: 100% !important;
+    }
+
+}
+
+/* end 1090px*/
+
+
+@media only screen and (max-width:767px) {
+
+    .menu-filter .top {
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .menu-filter .top ul {
+        gap: 12px;
+    }
+
+    .menu-filter .top ul li {
+        font-size: 16px;
+    }
+
+    .menu-filter .top ul+div {
+        gap: 10px;
+    }
+
+}
+
+/* end 767px*/
+
+@media only screen and (min-width:800px) and (max-width: 1120px) {
+    .menu-filter .my-card {
+        width: calc((100% - 60px) /3) !important
+    }
+}
+
+/* end 1120px and 800px*/
+
+@media only screen and (min-width:560px) and (max-width: 800px) {
+    .menu-filter .my-card {
+        width: calc((100% - 30px) /2) !important
+    }
+}
+
+/* end 800px and 560px*/
+
+@media only screen and (max-width:560px) {
+
+    .menu-filter .my-card {
+        width: 100% !important;
+    }
+
+    .menu-filter .my-card .card img {
+        width: 68%;
+        margin: auto;
+    }
+
+}
+
+/* end 560px*/
