@@ -8,6 +8,7 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 // to avoid the console error
 import { LeftArrow, RightArrow } from "../../common/customSliderArrows";
+import Spinner from "../../common/spinner/Spinner";
 
 /*===========================================*/
 /*===========================================*/
@@ -17,7 +18,8 @@ const SliderCategories = () => {
 
     const dispatch = useDispatch();
 
-    const { products } = useSelector((state) => state.product);
+    const { products, loading } = useSelector((state) => state.product);
+
 
     /*===========================================*/
 
@@ -77,8 +79,9 @@ const SliderCategories = () => {
     /*===========================================*/
 
     // show the first 7 products from whole products to draw the cart slider
-    const slicedProducts = products?.slice(0, 7)
+    const slicedProducts = products?.slice(0, 7);
 
+    if (loading) return <Spinner />;
     return (
         <div className="slider-categories">
             <div className="myContainer">
