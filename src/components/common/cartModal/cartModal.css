@@ -185,7 +185,7 @@
 }
 
 .cart-modal-Modal .cart-box-footer a:last-of-type {
-    margin-top: 14px;
+    margin: 14px auto 50px;
     border: 1px solid #999;
 }
 

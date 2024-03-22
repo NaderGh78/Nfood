@@ -95,3 +95,33 @@
         visibility: visible;
     }
 }
+
+/*====================================*/
+/*===========Responsive===============*/
+/*====================================*/
+
+@media only screen and (max-width:576px) {
+
+    .sticky-add-cart .image-box+div {
+        font-size: 12px;
+    }
+
+    .sticky-add-cart .sticky-add-cart-content {
+        align-items: normal;
+        flex-direction: column;
+        gap: 3px;
+    }
+
+    .sticky-add-cart span {
+        display: block;
+        font-size: 15px;
+    }
+
+    .sticky-add-cart button {
+        font-size: 14px;
+        padding: 4px 20px;
+    }
+
+}
+
+/* end 576px */
