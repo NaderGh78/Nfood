@@ -1,70 +1,56 @@
 .menu-filter {
     margin-top: 50px;
+    display: flex;
 }
 
-.menu-filter .top {
+.menu-filter .my-card {
+    width: calc((100% - 60px) /3) !important
+}
+
+.menu-filter .menu-filter-content-all {
+    display: flex;
+    gap: 30px;
+}
+
+.menu-filter .menu-filter-content-all .left {
+    flex: 9;
+}
+
+.menu-filter .menu-filter-content-all .left-content {
     display: flex;
     align-items: center;
     justify-content: space-between;
 }
 
-.menu-filter .top ul {
-    list-style: none;
+.menu-filter .menu-filter-content-all .left .left-content .filter-icon span {
     display: flex;
     align-items: center;
-    gap: 20px;
-    padding: 0;
-    margin: 0;
-}
-
-.menu-filter .top ul li {
-    font-size: 18px;
-    text-transform: capitalize;
+    gap: 5px;
+    padding: 4px 10px;
     color: var(--dark);
+    border: 1px solid var(--soft-white);
+    border-radius: 4px;
+    opacity: 0;
     cursor: pointer;
 }
 
-.menu-filter .top ul li.active {
-    text-decoration: underline;
-    color: var(--pistach);
-}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-.menu-filter .top ul+div {
+.menu-filter .menu-filter-content-all .left .left-content .filter-icon+div {
     display: flex;
+    gap: 15px;
     align-items: center;
-    gap: 20px;
 }
 
-.menu-filter .top ul+div .icons span {
+.menu-filter .menu-filter-content-all .right-sidebar {
+    flex: 3;
+}
+
+.categories-style ul li.active {
+    color: #fff;
+    background-color: var(--pistach);
+    border-radius: 7px;
+}
+
+.menu-filter .icons span {
     display: inline-block;
     width: 35px;
     height: 35px;
@@ -76,23 +62,18 @@
     cursor: pointer;
 }
 
-.menu-filter .top ul+div .icons span:first-of-type {
-    margin-right: 10px;
-}
-
-.menu-filter .top ul+div .icons span:hover,
-.menu-filter .top ul+div .icons span.active {
+.menu-filter .icons span:hover,
+.menu-filter .icons span.active {
     background-color: var(--pistach);
 }
 
-
-.menu-filter .top .select-box {
+.menu-filter .select-box {
     display: inline-block;
     position: relative;
     width: 200px;
 }
 
-.menu-filter .top .select-box:before {
+.menu-filter .select-box:before {
     content: "Sort By : ";
     position: absolute;
     top: 9px;
@@ -102,7 +83,7 @@
     z-index: 3;
 }
 
-.menu-filter .top .select-box select {
+.menu-filter .select-box select {
     -webkit-appearance: none;
     appearance: none;
     position: relative;
@@ -118,7 +99,7 @@
     cursor: pointer;
 }
 
-.menu-filter .top .select-box select:focus {
+.menu-filter .select-box select:focus {
     box-shadow: none;
 }
 
@@ -158,60 +139,9 @@
 
 /* end change to list view style */
 
-
 /*====================================*/
 /*===========Responsive===============*/
 /*====================================*/
-
-@media only screen and (max-width:1090px) {
-
-    .change-to-list-view .single-card-list-view {
-        width: 100% !important;
-    }
-
-}
-
-/* end 1090px*/
-
-
-@media only screen and (max-width:767px) {
-
-    .menu-filter .top {
-        flex-direction: column;
-        gap: 20px;
-    }
-
-    .menu-filter .top ul {
-        gap: 12px;
-    }
-
-    .menu-filter .top ul li {
-        font-size: 16px;
-    }
-
-    .menu-filter .top ul+div {
-        gap: 10px;
-    }
-
-}
-
-/* end 767px*/
-
-@media only screen and (min-width:800px) and (max-width: 1120px) {
-    .menu-filter .my-card {
-        width: calc((100% - 60px) /3) !important
-    }
-}
-
-/* end 1120px and 800px*/
-
-@media only screen and (min-width:560px) and (max-width: 800px) {
-    .menu-filter .my-card {
-        width: calc((100% - 30px) /2) !important
-    }
-}
-
-/* end 800px and 560px*/
 
 @media only screen and (max-width:560px) {
 
@@ -227,3 +157,67 @@
 }
 
 /* end 560px*/
+
+@media only screen and (min-width:560px) and (max-width: 800px) {
+
+    .menu-filter .my-card {
+        width: calc((100% - 30px) /2) !important
+    }
+
+}
+
+/* end 800px and 560px*/
+
+@media only screen and (max-width:767px) {
+
+    .menu-filter .menu-filter-content-all .left-content {
+        align-items: flex-start;
+        flex-direction: column;
+        gap: 16px;
+    }
+
+}
+
+/* end 767px*/
+
+@media only screen and (max-width:1090px) {
+
+    .change-to-list-view .single-card-list-view {
+        width: 100% !important;
+    }
+
+}
+
+/* end 1090px*/
+
+@media only screen and (min-width:800px) and (max-width: 1450px) {
+
+    .menu-filter .my-card {
+        width: calc((100% - 60px) /3) !important
+    }
+
+}
+
+/* end 1120px and 800px*/
+
+@media only screen and (max-width:1450px) {
+
+    .menu-filter .menu-filter-content-all {
+        gap: 0;
+    }
+
+    .menu-filter .menu-filter-content-all .left {
+        flex: 100%;
+    }
+
+    .menu-filter .menu-filter-sidebar-categories {
+        display: none;
+    }
+
+    .menu-filter .menu-filter-content-all .left .left-content .filter-icon span {
+        opacity: 1;
+    }
+
+}
+
+/* end 1450px */

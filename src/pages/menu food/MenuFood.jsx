@@ -4,7 +4,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { fetchProducts } from "../../redux/apiCalls/productApiCall";
 import { addToCart } from "../../redux/apiCalls/cartApiCall";
 import { useTitle } from "../../components/helpers";
-import { HeadingBreadcrumb, MenuFilter, Pagination } from "../../allPagesPaths";
+import { HeadingBreadcrumb, MenuFilter, MenuFilterModal, Pagination } from "../../allPagesPaths";
 
 /*===========================================*/
 /*===========================================*/
@@ -36,6 +36,13 @@ const MenuFood = () => {
 
     // this useRef in order change the [active class] in case we switch between [grid or list] cards view in menu page
     const spanRef = useRef();
+
+    // this for the filter category modal 
+    const [showCatModal, setShowCatModal] = useState(false);
+
+    const handleCloseCatModal = () => setShowCatModal(false);
+
+    const handleShowCatModal = () => setShowCatModal(true);
 
     /*===========================================*/
 
@@ -81,6 +88,7 @@ const MenuFood = () => {
         setFilteredItems(filtered);
         setSelectedCategory(category);
         setCurrentPage(1);
+        console.log(filtered.length)
     };
 
     /*===========================================*/
@@ -154,6 +162,9 @@ const MenuFood = () => {
                 showAll={showAll}
                 handleSortChange={handleSortChange}
                 sortOption={sortOption}
+                currentPage={currentPage}
+                pages={pages}
+                openCatModal={handleShowCatModal}
             />
 
             {/* if there are products show the pagination , otherwise no */}
@@ -165,6 +176,15 @@ const MenuFood = () => {
                     setCurrentPage={setCurrentPage}
                 />
             }
+
+            {/* open categories modal in small devices */}
+            <MenuFilterModal
+                showCatModal={showCatModal}
+                closeCatModal={handleCloseCatModal}
+                showAll={showAll}
+                        selectedCategory={selectedCategory}
+                        filterItems={filterItems}
+            />
         </div>
     )
 }

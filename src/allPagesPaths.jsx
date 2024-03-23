@@ -11,6 +11,8 @@ export { default as Testimonials } from "../src/components/home/testimonials/Tes
 export { default as OurStory } from "../src/components/home/story/OurStory";
 export { default as LoginModal } from "../src/components/home/login modal/LoginModal";
 export { default as MenuFilter } from "../src/components/menu food/menu filter/MenuFilter";
+export { default as MenuFilterSidebar } from "../src/components/menu food/MenuFilterSidebar";
+export { default as MenuFilterModal } from "../src/components/menu food/MenuFilterModal";
 export { default as Reviews } from "../src/components/item details/reviews/Reviews";
 export { default as SingleReview } from "../src/components/item details/single review/SingleReview";
 export { default as ReviewForm } from "../src/components/item details/review form/ReviewForm";

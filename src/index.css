@@ -210,6 +210,39 @@ a.my_link {
 
 /* ======================== */
 
+/* commun style */
+.categories-style {
+  border: 1px solid var(--soft-white);
+  ;
+  border-radius: 10px;
+  padding: 15px;
+}
+
+.categories-style ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  background-color: #edeaea;
+  border-radius: 10px;
+
+}
+
+.categories-style ul li {
+  cursor: pointer;
+  padding: 10px 15px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.categories-style ul li span:first-child {
+  display: flex;
+  align-items: center;
+  gap: 3px;
+}
+
+/* ======================== */
+
 /* style the confirm msg */
 .react-confirm-alert-overlay {
   background: rgba(0, 0, 0, .3) !important;
