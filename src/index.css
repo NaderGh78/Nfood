@@ -212,10 +212,9 @@ a.my_link {
 
 /* commun style */
 .categories-style {
-  border: 1px solid var(--soft-white);
-  ;
-  border-radius: 10px;
   padding: 15px;
+  border: 1px solid var(--soft-white);
+  border-radius: 10px;
 }
 
 .categories-style ul {
@@ -224,21 +223,25 @@ a.my_link {
   margin: 0;
   background-color: #edeaea;
   border-radius: 10px;
-
 }
 
 .categories-style ul li {
-  cursor: pointer;
-  padding: 10px 15px;
   display: flex;
   align-items: center;
   justify-content: space-between;
+  padding: 10px 15px;
+  transition: all .2s;
+  cursor: pointer;
+}
+
+.categories-style ul li:hover {
+  color: var(--pistach);
 }
 
 .categories-style ul li span:first-child {
   display: flex;
   align-items: center;
-  gap: 3px;
+  gap: 7px;
 }
 
 /* ======================== */

@@ -21,7 +21,9 @@ const MenuFilter = ({
     sortOption,
     currentPage,
     pages,
-    openCatModal
+    openCatModal,
+    getCatLength,
+    item
 }) => {
 
     /*===========================================*/
@@ -96,6 +98,8 @@ const MenuFilter = ({
                             showAll={showAll}
                             selectedCategory={selectedCategory}
                             filterItems={filterItems}
+                            getCatLength={getCatLength}
+                            item={item}
                         />
                     </div>
                 </div>

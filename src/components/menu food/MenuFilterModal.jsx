@@ -1,6 +1,5 @@
 import Modal from 'react-bootstrap/Modal';
-import { FaXmark } from "react-icons/fa6";
-import { FaBurger } from "react-icons/fa6";
+import { FaXmark, FaBurger } from "react-icons/fa6";
 import { FaPizzaSlice, FaCoffee } from "react-icons/fa";
 import { LuSalad, LuDessert } from "react-icons/lu";
 
@@ -8,7 +7,7 @@ import { LuSalad, LuDessert } from "react-icons/lu";
 /*===========================================*/
 /*===========================================*/
 
-const MenuFilterModal = ({ showCatModal, closeCatModal, showAll, selectedCategory, filterItems }) => {
+const MenuFilterModal = ({ showCatModal, closeCatModal, showAll, selectedCategory, filterItems, getCatLength, item }) => {
     return (
         <div>
             <Modal
@@ -29,45 +28,45 @@ const MenuFilterModal = ({ showCatModal, closeCatModal, showAll, selectedCategor
                     <div className="categories-style">
                         <ul>
                             <li
-                                onClick={showAll}
+                                onClick={() => { showAll(); closeCatModal() }}
                                 className={selectedCategory === "all" ? "active" : ""}
                             >
-                                <span><FaBurger />All</span><span>(8)</span>
+                                <span><FaBurger />All</span><span>({item.length})</span>
                             </li>
 
                             <li
-                                onClick={() => filterItems("pizza")}
+                                onClick={() => { filterItems("pizza"); closeCatModal() }}
                                 className={selectedCategory === "pizza" ? "active" : ""}
                             >
-                                <span><FaPizzaSlice />Pizza</span><span>(8)</span>
+                                <span><FaPizzaSlice />Pizza</span><span>({getCatLength("pizza")})</span>
                             </li>
 
                             <li
-                                onClick={() => filterItems("salad")}
+                                onClick={() => { filterItems("salad"); closeCatModal() }}
                                 className={selectedCategory === "salad" ? "active" : ""}
                             >
-                                <span><LuSalad />Salad</span><span>(8)</span>
+                                <span><LuSalad />Salad</span><span>({getCatLength("salad")})</span>
                             </li>
 
                             <li
-                                onClick={() => filterItems("burger")}
+                                onClick={() => { filterItems("burger"); closeCatModal() }}
                                 className={selectedCategory === "burger" ? "active" : ""}
                             >
-                                <span><FaBurger />Burger</span><span>(8)</span>
+                                <span><FaBurger />Burger</span><span>({getCatLength("burger")})</span>
                             </li>
 
                             <li
-                                onClick={() => filterItems("desserts")}
+                                onClick={() => { filterItems("desserts"); closeCatModal() }}
                                 className={selectedCategory === "desserts" ? "active" : ""}
                             >
-                                <span><LuDessert />Desserts</span><span>(8)</span>
+                                <span><LuDessert />Desserts</span><span>({getCatLength("desserts")})</span>
                             </li>
 
                             <li
-                                onClick={() => filterItems("drinks")}
+                                onClick={() => { filterItems("drinks"); closeCatModal() }}
                                 className={selectedCategory === "drinks" ? "active" : ""}
                             >
-                                <span><FaCoffee />Drinks</span><span>(8)</span>
+                                <span><FaCoffee />Drinks</span><span>({getCatLength("drinks")})</span>
                             </li>
                         </ul>
                     </div>

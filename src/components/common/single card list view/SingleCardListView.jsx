@@ -4,6 +4,7 @@ import { Link } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { addToCart } from "../../../redux/apiCalls/cartApiCall";
 import { setShowModal } from "../../../redux/slices/cartModalSlice";
+import { setShowRgisterModal } from "../../../redux/slices/modalSlice";
 import { FaHeart } from "react-icons/fa";
 import { FaEye } from "react-icons/fa6";
 
@@ -23,6 +24,9 @@ const SingleCardListView = ({ product }) => {
 
     const [heart, setHeart] = useState(false);
 
+    // for testing
+    const currentUser = true;
+
     /*===========================================*/
 
     // change heart color when user like the item
@@ -32,8 +36,16 @@ const SingleCardListView = ({ product }) => {
     /*===========================================*/
 
     const handleAddToCart = (product) => {
-        dispatch(addToCart(product));
-        dispatch(setShowModal())
+        /*
+       in case there is login user add to cart and show the cart modal,
+       otherwise show the register modal
+       */
+        if (currentUser) {
+            dispatch(addToCart(product));
+            dispatch(setShowModal());
+        } else {
+            dispatch(setShowRgisterModal())
+        }
     };
 
     /*===========================================*/
@@ -50,15 +62,17 @@ const SingleCardListView = ({ product }) => {
     return (
         <div className="single-card-list-view">
             {sale ? <span className="new-price">Sale!</span> : ""}
-            <div className="left">
+            <div className="image-left">
                 {/* <img src={process.env.PUBLIC_URL + itemImg} alt={itemName} /> */}
                 <img src={itemImg} alt={itemName} />
             </div>
             <div className="right">
-                <h5 className="card-title text-capitalize mb-2" style={{ userSelect: "text", color: "var(--dark)" }}>
-                    {itemName}
+                <h5>
+                    <Link to={`/products/${id}`}>
+                        {itemName}
+                    </Link>
                 </h5>
-                <p className="card-text" style={{ userSelect: "text", color: "var(--light-white)", lineHeight: "1.2" }}>
+                <p className="card-text">
                     {itemDesc.length > 90 ? itemDesc.slice(0, 90) + "..." : itemDesc}
                 </p>
                 <p className="edit-price">

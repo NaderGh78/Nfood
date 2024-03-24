@@ -116,7 +116,7 @@ const TopMenu = () => {
                     }}
                   />
               }
-              <Nav>
+              <Nav className='second-nav'>
                 <Nav.Link
                   as={Link}
                   to={"/search"}

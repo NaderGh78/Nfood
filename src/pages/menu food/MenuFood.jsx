@@ -93,6 +93,15 @@ const MenuFood = () => {
 
     /*===========================================*/
 
+    // get the length of every choosen category that inside the arr
+    const getCatLength = (currentCat) => {
+        const getFilterCat = item?.filter((item) => item.itemCat === currentCat);
+        const catLength = getFilterCat.length;
+        return catLength;
+    }
+
+    /*===========================================*/
+
     // if the category is [all] show all products
     const showAll = () => {
         setFilteredItems(item);
@@ -165,6 +174,8 @@ const MenuFood = () => {
                 currentPage={currentPage}
                 pages={pages}
                 openCatModal={handleShowCatModal}
+                getCatLength={getCatLength}
+                item={item}
             />
 
             {/* if there are products show the pagination , otherwise no */}
@@ -182,8 +193,10 @@ const MenuFood = () => {
                 showCatModal={showCatModal}
                 closeCatModal={handleCloseCatModal}
                 showAll={showAll}
-                        selectedCategory={selectedCategory}
-                        filterItems={filterItems}
+                selectedCategory={selectedCategory}
+                filterItems={filterItems}
+                getCatLength={getCatLength}
+                item={item}
             />
         </div>
     )

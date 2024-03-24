@@ -12,7 +12,8 @@ import {
     ItemDetails,
     Checkout,
     About,
-    Contact
+    Contact,
+    UserAccount
 } from "../allPagesPaths";
 
 /*===========================================*/
@@ -68,6 +69,10 @@ export const router = createHashRouter([
                 path: "/login",
                 element: <Login />
             },
+            {
+                path: "/account",
+                element: <UserAccount />
+            }
         ]
     },
     {

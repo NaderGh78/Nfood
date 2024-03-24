@@ -4,6 +4,7 @@ import { Link } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { setShowModal } from "../../../redux/slices/cartModalSlice";
 import { addToCart } from "../../../redux/apiCalls/cartApiCall";
+import { setShowRgisterModal } from "../../../redux/slices/modalSlice";
 import { FaHeart } from "react-icons/fa";
 import { FaEye } from "react-icons/fa6";
 
@@ -23,6 +24,9 @@ const SingleCard = ({ product }) => {
 
     const [heart, setHeart] = useState(false);
 
+    // for testing
+    const currentUser = true;
+
     /*===========================================*/
 
     // change heart color when user like the item
@@ -33,8 +37,17 @@ const SingleCard = ({ product }) => {
     /*===========================================*/
 
     const handleAddToCart = (product) => {
-        dispatch(addToCart(product));
-        dispatch(setShowModal());
+        /*
+        in case there is login user add to cart and show the cart modal,
+        otherwise show the register modal
+        */
+        if (currentUser) {
+            dispatch(addToCart(product));
+            dispatch(setShowModal());
+        } else {
+            dispatch(setShowRgisterModal())
+        }
+
     };
 
     /*===========================================*/

@@ -185,7 +185,7 @@
 }
 
 .cart-modal-Modal .cart-box-footer a:last-of-type {
-    margin: 14px auto 50px;
+    margin: 14px auto;
     border: 1px solid #999;
 }
 
@@ -286,7 +286,7 @@
     }
 
     .cart-modal-Modal .cart-products-content {
-        height: 400px;
+        height: 370px;
     }
 
     .cart-modal-Modal .cart-box-footer .total-price {

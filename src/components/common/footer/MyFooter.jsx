@@ -1,6 +1,7 @@
 import "./myFooter.css";
 import { Link } from "react-router-dom";
 import { FaFacebookF, FaYoutube, FaTwitter } from "react-icons/fa6";
+import FooterBottomMenu from "./FooterBottomMenu";
 
 /*===========================================*/
 /*===========================================*/
@@ -72,6 +73,9 @@ const MyFooter = () => {
                 </div>
             </div>
             {/* bottom end */}
+
+            {/* show the footer bottom menun in specefic devices */}
+            <FooterBottomMenu />
         </div>
     )
 }

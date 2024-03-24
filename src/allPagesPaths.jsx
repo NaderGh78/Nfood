@@ -35,4 +35,5 @@ export { default as Orders } from "../src/pages/orders/Orders";
 export { default as Search } from "../src/pages/search/Search";
 export { default as Cart } from "../src/pages/cart/Cart";
 export { default as Checkout } from "../src/pages/checkout/Checkout";
+export { default as UserAccount } from "../src/pages/user account/UserAccount";
 export { default as NotFound } from "../src/pages/not found/NotFound"; 
