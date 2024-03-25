@@ -3,6 +3,27 @@
     border-bottom: 1px solid #dee2e6 !important;
 }
 
+/* put image instead icon in navbar toggler */
+.navbar-toggler {
+    padding: 0 !important;
+    border-radius: 0 !important;
+    border: none !important;
+}
+
+.navbar-toggler:focus {
+    box-shadow: none !important;
+}
+
+.navbar-light .navbar-toggler-icon {
+    width: 50px;
+    height: 50px;
+    background-image: url("../../../../public/assets/images/big.png") !important;
+    border: 2px solid #dee2e6;
+    border-radius: 50%;
+}
+
+/* =================== */
+
 .topmenu .navbar-brand img {
     width: 120px;
 }
@@ -171,33 +192,6 @@
 /*===========Responsive===============*/
 /*====================================*/
 
-@media only screen and (max-width: 425px) {
-
-    .navbar-toggler {
-        border-color: var(--dark) !important;
-    }
-
-    .navbar-toggler:focus {
-        box-shadow: none !important;
-    }
-
-}
-
-/* end 425px */
-
-@media only screen and (max-width: 768px) {
-
-    .dropdown-toggle {
-        width: 100%;
-        justify-content: space-between;
-        margin-bottom: 10px;
-        padding: 0 !important;
-    }
-
-}
-
-/* end 768px */
-
 @media only screen and (max-width:990px) {
 
     .topmenu .second-nav,
@@ -207,7 +201,6 @@
 }
 
 /* end 990px */
-
 
 @media only screen and (max-width: 991px) {
 

@@ -87,7 +87,6 @@ const SingleCardListView = ({ product }) => {
                             <span>${itemPrice}</span>
                         </>}
                 </p>
-
                 <div className="bottom">
                     <span onClick={() => handleAddToCart(product)}>
                         {inCart ? "In Cart" : "Add to Cart"}{inCart ? <small>{itemQty}</small> : ""}

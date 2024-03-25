@@ -10,7 +10,6 @@
 .reviews .reviews-content {
     display: flex;
     gap: 40px;
-    margin-top: 20px;
 }
 
 .reviews .reviews-content .left,

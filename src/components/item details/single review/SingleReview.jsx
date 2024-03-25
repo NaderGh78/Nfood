@@ -1,7 +1,6 @@
 import "./singleReview.css";
 import { LiaStarSolid } from "react-icons/lia";
 import { FaClock } from "react-icons/fa6";
-import reviewImg from "../../../assets/images/review.png";
 
 /*===========================================*/
 /*===========================================*/
@@ -10,7 +9,7 @@ import reviewImg from "../../../assets/images/review.png";
 const SingleReview = () => {
     return (
         <div className="single-review">
-            <img src={reviewImg} alt="review single" />
+            <img src={process.env.PUBLIC_URL + "/assets/images/review.png"} alt="single review" />
             <div className="review">
                 <ul>
                     <li><LiaStarSolid /></li>

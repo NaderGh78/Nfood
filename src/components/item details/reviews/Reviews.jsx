@@ -8,7 +8,6 @@ import { ReviewForm, SingleReview } from "../../../allPagesPaths";
 const Reviews = () => {
     return (
         <div className="reviews">
-            <h2>Reviews (5) </h2>
             <div className="reviews-content">
                 <div className="left">
                     <SingleReview />

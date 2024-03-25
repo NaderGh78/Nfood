@@ -252,10 +252,6 @@ input[type=number] {
 
 /* end right style */
 
-.item-details .item-details-bottom {
-    padding-top: 70px;
-}
-
 /*====================================*/
 /*===========Responsive===============*/
 /*====================================*/
@@ -275,13 +271,14 @@ input[type=number] {
 /* end 768px */
 
 @media only screen and (max-width:600px) {
+
     .item-details .add-to-cart-banner {
+        padding: 10px 13px 10px 5px;
+        margin-bottom: 15px;
         font-size: 16px !important;
         border-left: 5px solid rgba(0, 0, 0, .15) !important;
-        padding: 10px 13px 10px 5px;
-        font-size: 18px;
-        margin-bottom: 15px;
     }
+
 }
 
 /* end 600px */

@@ -2,12 +2,12 @@ import "./itemDetails.css";
 import { useEffect, useState } from "react";
 import { Link, useParams } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
-import { fetchSingleProduct } from "../../redux/apiCalls/productApiCall";
+import { fetchProducts, fetchSingleProduct } from "../../redux/apiCalls/productApiCall";
 import { addToCart, decreaseProduct, increaseProduct } from "../../redux/apiCalls/cartApiCall";
 import { LiaStarSolid } from "react-icons/lia";
 import { FaBasketShopping } from "react-icons/fa6";
 import { FaFacebookF, FaHeart, FaTwitter, FaYoutube } from "react-icons/fa";
-import { MySpinner, Reviews, StickyAddCart } from "../../allPagesPaths";
+import { MySpinner, RelatedProducts, Reviews, StickyAddCart, TabsItemDetailes } from "../../allPagesPaths";
 import { HashLink } from 'react-router-hash-link';
 import { useTitle } from "../../components/helpers/index";
 import Spinner from "../../components/common/spinner/Spinner";
@@ -22,7 +22,7 @@ const ItemDetails = () => {
 
     const { cartItems } = useSelector((state) => state.cart);
 
-    const { product, loading } = useSelector((state) => state.product);
+    const { products, product, loading } = useSelector((state) => state.product);
 
     const [quantity, setQuantity] = useState(1);
 
@@ -46,6 +46,23 @@ const ItemDetails = () => {
     useEffect(() => {
         dispatch(fetchSingleProduct(id));
     }, [id]);
+
+    /*===========================================*/
+
+    // get all fetchProducts
+    useEffect(() => {
+        dispatch(fetchProducts());
+    }, [id]);
+
+    // get all related products categories except the current product that we get by it id
+    const getAllProductsWithSameCat =
+        products?.filter(ele => ele.itemCat === product?.itemCat)
+            .filter(ele => ele.id !== product?.id);
+
+    // get first 4 similair categories products
+    const getFirstFourProducts =
+        getAllProductsWithSameCat.length > 4 ?
+            getAllProductsWithSameCat.slice(0, 4) : getAllProductsWithSameCat;
 
     /*===========================================*/
 
@@ -75,10 +92,9 @@ const ItemDetails = () => {
     }, [isVisible])
 
     const listenToScroll = () => {
-        let heightToShowComp = 490;
+        let heightToShowComp = 700;
         const winScroll = document.body.scrollTop ||
             document.documentElement.scrollTop;
-
         if (winScroll > heightToShowComp) {
             setIsVisible(true);
         } else {
@@ -147,7 +163,6 @@ const ItemDetails = () => {
                                         <span>${product?.itemPrice}</span>
                                     </>}
                             </div>
-
                             <div className="increase">
                                 <button onClick={() => handleDecrementQuantity(product?.id)}>-</button>
                                 <input
@@ -193,10 +208,13 @@ const ItemDetails = () => {
                         {/* end right */}
                     </div>
                     {/* end item details top */}
-                    <div className="item-details-bottom" id="reviews">
-                        <Reviews />
+                    <div className="item-details-bottom">
+                        <TabsItemDetailes />
                     </div>
+                    {/* related products */}
+                    <RelatedProducts relatedProducts={getFirstFourProducts} />
                 </div>
+                {/* end item details content */}
             </div>
             {/* show the footer sticky add to cart section*/}
             {product && !inCart ? <StickyAddCart product={product} addToCart={addToCartHandler} isVisible={isVisible} /> : ""}

@@ -17,6 +17,12 @@ export { default as Reviews } from "../src/components/item details/reviews/Revie
 export { default as SingleReview } from "../src/components/item details/single review/SingleReview";
 export { default as ReviewForm } from "../src/components/item details/review form/ReviewForm";
 export { default as StickyAddCart } from "../src/components/item details/stick add to cart/StickyAddCart";
+export { default as RelatedProducts } from "../src/components/item details/related products/RelatedProducts";
+export { default as TabsItemDetailes } from "../src/components/item details/item details tabs/TabsItemDetailes";
+
+
+
+
 export { default as Pagination } from "../src/components/common/pagination/Pagination";
 export { default as HeadingBreadcrumb } from "../src/components/common/heading breadcrumb/HeadingBreadcrumb";
 export { default as CartModal } from "../src/components/common/cartModal/CartModal";

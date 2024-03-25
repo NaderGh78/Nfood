@@ -29,7 +29,7 @@ const MenuFood = () => {
 
     const [currentPage, setCurrentPage] = useState(1);
 
-    const [itemsPerPage] = useState(8); // Number of items to display per page
+    const [itemsPerPage] = useState(6); // Number of items to display per page
 
     // to switch between [grid or list] cards view in menu page
     const [view, setView] = useState(JSON.parse(localStorage.getItem("change-view")) || false);
@@ -88,7 +88,6 @@ const MenuFood = () => {
         setFilteredItems(filtered);
         setSelectedCategory(category);
         setCurrentPage(1);
-        console.log(filtered.length)
     };
 
     /*===========================================*/
