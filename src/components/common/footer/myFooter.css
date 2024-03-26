@@ -1,6 +1,6 @@
 .footer {
-    color: var(--dark);
     margin-top: 70px;
+    color: var(--dark);
 }
 
 .footer ul {
@@ -16,7 +16,7 @@
 
 /* start top style */
 .footer .top {
-    padding-bottom: 25px;
+    padding-bottom: 10px;
     border-bottom: 1px solid #ddd;
 }
 
@@ -42,6 +42,50 @@
 
 .footer .top .footer-sections ul li a:hover {
     text-decoration: underline;
+}
+
+/* will appear in small devices */
+.footer .top .footer-toggle {
+    display: none;
+}
+
+/* style the accordion */
+.footer .top .footer-toggle .accordion-button {
+    padding: 0;
+    background-color: transparent;
+}
+
+.footer .top .footer-toggle .accordion-button:focus {
+    box-shadow: none;
+}
+
+.footer .top .footer-toggle .accordion-body {
+    padding: 0;
+    margin-bottom: 8px;
+}
+
+.footer .top .footer-toggle .accordion-button:not(.collapsed) {
+    background-color: transparent !important;
+    color: var(--dark) !important;
+    box-shadow: none !important;
+}
+
+.footer .top .footer-toggle .accordion-item {
+    margin-bottom: 5px;
+    background-color: transparent;
+}
+
+.footer .top .footer-toggle .accordion-button::after {
+    content: "\F282";
+    position: absolute;
+    top: 1px;
+    right: 0;
+    background-image: none !important;
+    font-family: "Bootstrap-icons";
+    font-size: 12px;
+    font-weight: 800;
+    color: var(--dark);
+    transform-origin: 6px;
 }
 
 /* end top style */
@@ -149,11 +193,26 @@
         flex-direction: column;
     }
 
+    .footer .top .footer-content-show {
+        display: none;
+    }
+
+    .footer .top .footer-toggle {
+        display: block;
+    }
+
+    .footer .top h6 {
+        font-size: 14px;
+        color: var(--dark);
+        margin-bottom: 0;
+    }
+
 }
 
 /* end 576px */
 
 @media only screen and (max-width:990px) {
+
     .footer .bottom {
         margin-bottom: 50px;
     }

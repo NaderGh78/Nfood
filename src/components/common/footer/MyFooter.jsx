@@ -2,6 +2,7 @@ import "./myFooter.css";
 import { Link } from "react-router-dom";
 import { FaFacebookF, FaYoutube, FaTwitter } from "react-icons/fa6";
 import FooterBottomMenu from "./FooterBottomMenu";
+import Accordion from 'react-bootstrap/Accordion';
 
 /*===========================================*/
 /*===========================================*/
@@ -20,11 +21,13 @@ const MyFooter = () => {
                                     <span>N</span>Food
                                 </h5>
                             </Link>
-
                             <p>Savor the artistry where every dish is a culinary masterpiece</p>
                         </div>
+
                         {/* ================ */}
-                        <div>
+
+                        {/* in big screen show this */}
+                        <div className="footer-content-show">
                             <h6>USEFUL LINKS</h6>
                             <ul>
                                 <li><Link to="">About us</Link></li>
@@ -33,8 +36,28 @@ const MyFooter = () => {
                                 <li><Link to="">FAQ</Link></li>
                             </ul>
                         </div>
+
+                        {/* in mobile screen show this */}
+                        <div className="footer-toggle">
+                            <Accordion flush>
+                                <Accordion.Item eventKey="0">
+                                    <Accordion.Header><h6>USEFUL LINKS</h6></Accordion.Header>
+                                    <Accordion.Body>
+                                        <ul>
+                                            <li><Link to="">About us</Link></li>
+                                            <li><Link to="">Events</Link></li>
+                                            <li><Link to="">Blogs</Link></li>
+                                            <li><Link to="">FAQ</Link></li>
+                                        </ul>
+                                    </Accordion.Body>
+                                </Accordion.Item>
+                            </Accordion>
+                        </div>
+
                         {/* ================ */}
-                        <div>
+
+                        {/* in big screen show this */}
+                        <div className="footer-content-show">
                             <h6>MAIN MENU</h6>
                             <ul>
                                 <li><Link to="">Home</Link></li>
@@ -43,8 +66,28 @@ const MyFooter = () => {
                                 <li><Link to="">Reservation</Link></li>
                             </ul>
                         </div>
+
+                        {/* in mobile screen show this */}
+                        <div className="footer-toggle">
+                            <Accordion flush>
+                                <Accordion.Item eventKey="0">
+                                    <Accordion.Header><h6>MAIN MENU</h6></Accordion.Header>
+                                    <Accordion.Body>
+                                        <ul>
+                                            <li><Link to="">Home</Link></li>
+                                            <li><Link to="">Offers</Link></li>
+                                            <li><Link to="">Menus</Link></li>
+                                            <li><Link to="">Reservation</Link></li>
+                                        </ul>
+                                    </Accordion.Body>
+                                </Accordion.Item>
+                            </Accordion>
+                        </div>
+
                         {/* ================ */}
-                        <div>
+
+                        {/* in big screen show this */}
+                        <div className="footer-content-show">
                             <h6>CONTACT US</h6>
                             <ul>
                                 <li><Link to="">example@email.com</Link></li>
@@ -52,6 +95,23 @@ const MyFooter = () => {
                                 <li><Link to="">Social media</Link></li>
                             </ul>
                         </div>
+
+                        {/* in mobile screen show this */}
+                        <div className="footer-toggle">
+                            <Accordion flush>
+                                <Accordion.Item eventKey="0">
+                                    <Accordion.Header><h6>CONTACT US</h6></Accordion.Header>
+                                    <Accordion.Body>
+                                        <ul>
+                                            <li><Link to="">example@email.com</Link></li>
+                                            <li><Link to="">+123456789</Link></li>
+                                            <li><Link to="">Social media</Link></li>
+                                        </ul>
+                                    </Accordion.Body>
+                                </Accordion.Item>
+                            </Accordion>
+                        </div>
+
                         {/* ================ */}
                     </div>
                     {/* footer-sections end */}
