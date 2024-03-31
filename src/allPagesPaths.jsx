@@ -19,15 +19,22 @@ export { default as ReviewForm } from "../src/components/item details/review for
 export { default as StickyAddCart } from "../src/components/item details/stick add to cart/StickyAddCart";
 export { default as RelatedProducts } from "../src/components/item details/related products/RelatedProducts";
 export { default as TabsItemDetailes } from "../src/components/item details/item details tabs/TabsItemDetailes";
-
-
-
-
 export { default as Pagination } from "../src/components/common/pagination/Pagination";
 export { default as HeadingBreadcrumb } from "../src/components/common/heading breadcrumb/HeadingBreadcrumb";
 export { default as CartModal } from "../src/components/common/cartModal/CartModal";
 export { default as ScrollToTopWhenNavigatePage } from "../src/components/common/ScrollToTopWhenNavigatePage";
 export { default as MySpinner } from "../src/components/helpers/my spinner/MySpinner";
+// admin components
+export { default as AdminMain } from "../src/components/admin/AdminMain";
+export { default as AdminOrdersTable } from "../src/components/admin/AdminOrdersTable";
+export { default as AdminCutomersTable } from "../src/components/admin/AdminCutomersTable";
+export { default as AdminFoodCategories } from "../src/components/admin/AdminFoodCategories";
+export { default as AdminCatModal } from "../src/components/admin/AdminCatModal";
+export { default as AdminCategoryForm } from "../src/components/admin/AdminCategoryForm";
+
+/*===========================================*/
+/*===========================================*/
+/*===========================================*/
 
 // pages
 export { default as Register } from "../src/pages/register/Register";
@@ -42,4 +49,5 @@ export { default as Search } from "../src/pages/search/Search";
 export { default as Cart } from "../src/pages/cart/Cart";
 export { default as Checkout } from "../src/pages/checkout/Checkout";
 export { default as UserAccount } from "../src/pages/user account/UserAccount";
-export { default as NotFound } from "../src/pages/not found/NotFound"; 
+export { default as NotFound } from "../src/pages/not found/NotFound";
+export { default as Admin } from "../src/pages/admin/Admin";  

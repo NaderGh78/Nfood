@@ -3,11 +3,11 @@ import { useEffect, useState } from "react";
 import { Link, useParams } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { fetchProducts, fetchSingleProduct } from "../../redux/apiCalls/productApiCall";
-import { addToCart, decreaseProduct, increaseProduct } from "../../redux/apiCalls/cartApiCall";
+import { addToCart } from "../../redux/apiCalls/cartApiCall";
 import { LiaStarSolid } from "react-icons/lia";
 import { FaBasketShopping } from "react-icons/fa6";
 import { FaFacebookF, FaHeart, FaTwitter, FaYoutube } from "react-icons/fa";
-import { MySpinner, RelatedProducts, Reviews, StickyAddCart, TabsItemDetailes } from "../../allPagesPaths";
+import { RelatedProducts, StickyAddCart, TabsItemDetailes } from "../../allPagesPaths";
 import { HashLink } from 'react-router-hash-link';
 import { useTitle } from "../../components/helpers/index";
 import Spinner from "../../components/common/spinner/Spinner";
@@ -45,6 +45,8 @@ const ItemDetails = () => {
     // fetch single product every time changed id
     useEffect(() => {
         dispatch(fetchSingleProduct(id));
+        // reset the quantity, in case we choose another related product
+        setQuantity(1);
     }, [id]);
 
     /*===========================================*/
@@ -68,7 +70,7 @@ const ItemDetails = () => {
 
     // Add To Cart Handler
     const addToCartHandler = (product) => {
-        dispatch(addToCart(product));
+        dispatch(addToCart({ ...product, itemQty: quantity }));
         window.scrollTo(0, 0);
     };
 
@@ -104,12 +106,12 @@ const ItemDetails = () => {
 
     /*===========================================*/
 
-    const handleIncrementQuantity = (id) => {
-        dispatch(increaseProduct(id));
+    const handleIncrementQuantity = () => {
+        setQuantity(prev => prev + 1);
     };
 
-    const handleDecrementQuantity = id => {
-        dispatch(decreaseProduct(id));
+    const handleDecrementQuantity = () => {
+        setQuantity(prev => prev === 1 ? 1 : prev - 1);
     };
 
     /*===========================================*/
@@ -164,15 +166,16 @@ const ItemDetails = () => {
                                     </>}
                             </div>
                             <div className="increase">
-                                <button onClick={() => handleDecrementQuantity(product?.id)}>-</button>
-                                <input
+                                <button onClick={() => handleDecrementQuantity()} disabled={inCart}>-</button>
+                                {/* <input
                                     type="number"
                                     value={quantity}
                                     onChange={(e) => setQuantity(e.target.value)}
                                     min="1"
                                     max="10"
-                                />
-                                <button onClick={() => handleIncrementQuantity(product?.id)}>+</button>
+                                /> */}
+                                <span>{quantity}</span>
+                                <button onClick={() => handleIncrementQuantity()} disabled={inCart}>+</button>
                                 <button className="big-btn" onClick={() => addToCartHandler(product)} disabled={inCart}>
                                     {!inCart ? <><FaBasketShopping /> Add to Cart</> : "In Cart"}
                                     {/* 

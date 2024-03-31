@@ -2,7 +2,7 @@ import "./cart.css";
 import { Link } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { decreaseProduct, increaseProduct, removeFromCart } from "../../redux/apiCalls/cartApiCall";
-import { cartTotalSelector } from "../../redux/slices/cartSlice";
+import { cartTotalSelector, clearCart, emptyCart } from "../../redux/slices/cartSlice";
 import { useTitle } from "../../components/helpers";
 import { HeadingBreadcrumb } from "../../allPagesPaths";
 import { AiOutlineCloseCircle } from "react-icons/ai";
@@ -23,7 +23,11 @@ const Cart = () => {
 
     const cartTotal = useSelector(cartTotalSelector);
 
+    // make the first product at the top element in table
+    let reversedCartItems = [...cartItems].reverse();
+
     /*===========================================*/
+
     // Delete item Handler
     const deleteItemHandler = (id) => {
         swal({
@@ -41,10 +45,27 @@ const Cart = () => {
 
     /*===========================================*/
 
+    // clear cart handler
+    const emptyCartHandler = () => {
+        swal({
+            title: "Are you sure to clear all cart ?",
+            text: "Once deleted, you will not be able to recover this item!",
+            icon: "warning",
+            buttons: true,
+            dangerMode: true,
+        }).then((isOk) => {
+            if (isOk) {
+                dispatch(clearCart());
+            }
+        });
+    };
+
+    /*===========================================*/
+
     return (
         <div className="cart">
             <HeadingBreadcrumb breadcrumb="cart" />
-            {cartItems.length > 0
+            {reversedCartItems.length > 0
                 ?
                 <>
                     <div className="myContainer">
@@ -62,7 +83,7 @@ const Cart = () => {
                                     </thead>
                                     <tbody>
                                         {
-                                            cartItems.map((el, idx) => (
+                                            reversedCartItems.map((el, idx) => (
                                                 <tr key={idx}>
                                                     <th scope="row">{idx + 1}</th>
                                                     <td>
@@ -136,6 +157,7 @@ const Cart = () => {
                                     </li>
                                 </ul>
                                 <Link to="/checkout">Proceed to checkout</Link>
+                                <button onClick={emptyCartHandler}>Clear Cart</button>
                             </div>
                         </div>
                     </div>

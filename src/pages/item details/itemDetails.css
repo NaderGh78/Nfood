@@ -165,6 +165,16 @@ input[type=number] {
     color: #fff;
 }
 
+.item-details .item-details-top .right .increase span {
+    display: inline-block;
+    width: 35px;
+    height: 30px;
+    text-align: center;
+    line-height: 30px;
+    font-weight: 600;
+    color: var(--dark);
+}
+
 .item-details .item-details-top .right button.big-btn {
     position: relative;
     display: flex;

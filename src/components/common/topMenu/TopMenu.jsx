@@ -52,7 +52,12 @@ const TopMenu = () => {
           <Navbar.Brand as={Link} to={"/"}>
             <h5 className='my-logo'><span>N</span>Food</h5>
           </Navbar.Brand>
+
+          {/* <h5 style={{color:"var(--dark)"}}>hello</h5> */}
+
+
           <Navbar.Toggle aria-controls="basic-navbar-nav" onClick={() => setExpanded(expanded ? false : "expanded")} />
+         
           <Navbar.Collapse id="basic-navbar-nav">
             {/* make the ul in center of navbar with mx-auto*/}
             <Nav className="mx-auto">

@@ -56,6 +56,11 @@ const cartSlice = createSlice({
             state.cartItems = state.cartItems.filter(
                 (item) => item.id !== action.payload
             );
+        },
+        // empty cart
+        clearCart: (state) => {
+            state.cartItems = [];
+            localStorage.setItem("cartItems", JSON.stringify(state.cartItems));
         }
     }
 });
@@ -78,6 +83,7 @@ export const cartTotalSelector = (state) => state.cart.cartItems.reduce((total, 
     }
 }, 0);
 
+export const { clearCart } = cartSlice.actions;
 const cartActions = cartSlice.actions;
 const cartReducer = cartSlice.reducer;
 

@@ -22,6 +22,9 @@ const CartModal = () => {
     // get cartTotal
     const cartTotal = useSelector(cartTotalSelector);
 
+    // make the first product at the top element in table
+    let reversedCartItems = [...cartItems].reverse();
+
     /*===========================================*/
 
     // Delete item Handler
@@ -57,10 +60,10 @@ const CartModal = () => {
                         </span>
                     </div>
                     <Modal.Body>
-                        {cartItems.length ?
+                        {reversedCartItems.length ?
                             <>
                                 <div className="cart-products-content">
-                                    {cartItems.map((el, i) => (
+                                    {reversedCartItems.map((el, i) => (
                                         <CartModalSingle data={el} key={i} onDelete={deleteItemHandler} />
                                     ))}
                                 </div>

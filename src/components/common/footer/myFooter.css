@@ -88,6 +88,10 @@
     transform-origin: 6px;
 }
 
+.accordion-button:not(.collapsed)::after {
+    top: -5px !important;
+}
+
 /* end top style */
 
 /* start bottom style */

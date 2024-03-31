@@ -13,7 +13,12 @@ import {
     Checkout,
     About,
     Contact,
-    UserAccount
+    UserAccount,
+    AdminMain,
+    Admin,
+    AdminOrdersTable,
+    AdminCutomersTable,
+    AdminFoodCategories
 } from "../allPagesPaths";
 
 /*===========================================*/
@@ -72,7 +77,29 @@ export const router = createHashRouter([
             {
                 path: "/account",
                 element: <UserAccount />
-            }
+            },
+            {
+                path: "/admin",
+                element: <Admin />,
+                children: [
+                    {
+                        index: true,
+                        element: <AdminMain />
+                    },
+                    {
+                        path: "orders",
+                        element: <AdminOrdersTable />
+                    },
+                    {
+                        path: "customers",
+                        element: <AdminCutomersTable />
+                    },
+                    {
+                        path: "categories",
+                        element: <AdminFoodCategories />
+                    },
+                ]
+            },
         ]
     },
     {
